@@ -28,3 +28,7 @@ Route::any('user/redis2','User\\LoginController@redis2');
 
 Route::any('user/baidu','User\\LoginController@baidu');
 
+
+//微信开发
+Route::any('weixin/wechat','WeiXin\\WxController@wechat');
+
