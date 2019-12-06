@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    手握权威  一揽山河
                 </div>
 
                 <div class="links">
