@@ -46,4 +46,8 @@ class WxController extends Controller
         file_put_contents($log_file,$data,FILE_APPEND);  //追加写
         
     }
+    public function  asda(Request $request)
+    {
+        echo $request->echostr;
+    }
 }
