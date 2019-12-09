@@ -25,10 +25,9 @@ class WxController extends Controller
         }
     }
 
-    public function index(Request $request)
+    public function  index(Request $request)
     {
-        $echostr=$request->input('echostr');
-        echo $echostr;die;
+        echo $request->echostr;
     }
 
 }
