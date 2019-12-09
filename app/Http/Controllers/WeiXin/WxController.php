@@ -25,9 +25,25 @@ class WxController extends Controller
         }
     }
 
+    //接口
     public function  index(Request $request)
     {
         echo $request->echostr;
     }
 
+    //获取用回基本信息
+    public function  getUserInfo()
+    {
+        $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN';
+    }
+
+    //接收微信推送事件
+    public function receiv()
+    {
+        $log_file = "wx.log";
+        //将接收的数据记录到日志文件
+        $data = json_encode($_POST);
+        file_put_contents($log_file,$data,FILE_APPEND);  //追加写
+        
+    }
 }

@@ -25,12 +25,12 @@ Route::any('user/index','User\\LoginController@index');
 Route::any('user/addUser','User\\LoginController@addUser');
 Route::any('user/redis1','User\\LoginController@redis1');
 Route::any('user/redis2','User\\LoginController@redis2');
-
-
 Route::any('user/baidu','User\\LoginController@baidu');
 
 
 //微信开发
 Route::any('weixin/wechat','WeiXin\WxController@wechat');
 Route::get('weixin/index','WeiXin\WxController@index');
+
+Route::post'weixin/index','WeiXin\WxController@receiv');
 
