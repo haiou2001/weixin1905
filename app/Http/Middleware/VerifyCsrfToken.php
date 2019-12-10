@@ -20,6 +20,6 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
-        "/weixin";    //忽略当前路由的  csrf验证
+//        "/weixin";    //忽略当前路由的  csrf验证
     ];
 }

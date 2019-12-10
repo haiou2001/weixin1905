@@ -31,6 +31,5 @@ Route::any('user/baidu','User\\LoginController@baidu');
 //微信开发
 Route::any('weixin/wechat','WeiXin\WxController@wechat');
 Route::get('weixin/index','WeiXin\WxController@index');
-
-Route::post'weixin/index','WeiXin\WxController@receiv');
+Route::get('/test/xml','Test\TestController@xmlTest');
 

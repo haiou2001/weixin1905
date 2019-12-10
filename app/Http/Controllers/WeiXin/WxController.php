@@ -42,10 +42,11 @@ class WxController extends Controller
     {
         $log_file = "wx.log";
         //将接收的数据记录到日志文件
-        $xml = file_get_contents("php://input");
+        $xml_str = file_get_contents("php://input");
         $data = date('Y-m-d H:i:s') .$xml;
         file_put_contents($log_file,$data,FILE_APPEND);  //追加写
-        
+
+        $xml_arr = simplexml_load_string($xml_str);
     }
     public function  asda(Request $request)
     {
