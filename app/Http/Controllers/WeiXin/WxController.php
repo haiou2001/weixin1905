@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Weixin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class WeixinController extends Controller
+class WxController extends Controller
 {
     protected $access_token;
 
