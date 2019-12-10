@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Weixin;
+namespace App\Http\Controllers\WeiXin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -34,9 +34,6 @@ class WxController extends Controller
         sort($tmpArr, SORT_STRING);
         $tmpStr = implode( $tmpArr );
         $tmpStr = sha1( $tmpStr );
-
-
-
 
 
         if($tmpStr == $signature){

@@ -29,8 +29,8 @@ Route::any('user/baidu','User\\LoginController@baidu');
 
 
 //微信开发
-Route::get('/wx','Weixin\WxController@wx');
-Route::post('/wx','Weixin\WxController@receiv');
+Route::get('/wx','WeiXin\WxController@wx');
+Route::post('/wx','WeiXin\WxController@receiv');
 
 
 
