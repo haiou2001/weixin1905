@@ -9,5 +9,5 @@ class WeiXinModel extends Model
 
     protected $table = 'p_wx_users';
     //主键id
-    protected $primaryKey = 'uid';
+    protected $primaryKey = 'u_id';
 }
