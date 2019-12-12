@@ -4,6 +4,7 @@ namespace App\Http\Controllers\WeiXin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Model\WeiXinModel;
 
 class WxController extends Controller
 {
@@ -60,7 +61,23 @@ class WxController extends Controller
         $event = $xml_obj->Event;  //获取事件7类型 是不是关注
         if($event=='subscribe'){
             $oppenid = $xml_obj->FromUserName;      //获取用户的oppenid
+            //判断用户是否已存在
+            $u = WeiXinModel::where(['oppenid'=>$oppenid])->first();
+            if ($u){
+                //TODO 欢迎回来
+                echo "欢迎回来";die;
+            }else{
+                $user_data = [
+                    'oppenid' => $oppenid,               //获取用户的openid
+                    'sub_time' => $xml_obj->CreateTime,  //关注时间
 
+                ];
+                //用户入库
+                $uid= WeiXinModel::insertGetId($user_data);
+                var_dump($uid);die;
+            }
+
+            
             //获取用户信息
             $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$this->access_token.'&openid='.$oppenid.'&lang=zh_CN';
             $user_info = file_get_contents($url);
