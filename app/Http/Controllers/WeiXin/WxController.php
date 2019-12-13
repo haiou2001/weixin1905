@@ -202,4 +202,11 @@ class WxController extends Controller
 </xml>';
         echo $response_text;            // 回复用户消息
     }
+
+
+
+    public function wangjiankun(){
+
+        echo "123";
+    }
 }
