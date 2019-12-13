@@ -177,6 +177,7 @@ class WxController extends Controller
         $json_str = file_get_contents($url);
         $log_file = 'wx.user.log';
         file_put_contents($log_file,$json_str,FILE_APPEND);
+        return $json_str;
     }
 
     public function huifu($xml_obj, $code, $nickname)
