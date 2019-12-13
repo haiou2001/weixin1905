@@ -9,7 +9,7 @@ use App\Model\WeiXinModel;
 class WxController extends Controller
 {
     protected $access_token;
-    
+
     public function __construct()
     {
         //获取sccess_token
@@ -75,10 +75,8 @@ class WxController extends Controller
             }else{
                 //获取用户信息 zcza
                 $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$this->access_token.'&openid='.$openid.'&lang=zh_CN';
-
                 $user_info = file_get_contents($url);       //
                 $u = json_decode($user_info,true);
-
                 //echo '<pre>';print_r($u);echo '</pre>';die;
                 //入库用户信息
                 $user_data = [
@@ -119,17 +117,28 @@ class WxController extends Controller
             echo $response_text;            // 回复用户消息
         }
     }
+    /**
+     * 获取用户基本信息
+     */
+    public function getUserInfo($access_token,$openid)
+    {
+        $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
+        //发送网络请求
+        $json_str = file_get_contents($url);
+        $log_file = 'wx_user.log';
+        file_put_contents($log_file,$json_str,FILE_APPEND);
+    }
 
     /**
      *获取用户基本信息
      */
-    public function getUserInfo($access_token,$oppenid){
-        $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$oppenid.'&lang=zh_CN';
-        //发送网络请求
-        $json_str = file_get_contents($url);
-        $log_file = 'wx.user.log';
-        file_put_contents($log_file,$json_str,FILE_APPEND);
-    }
+//    public function getUserInfo($access_token,$oppenid){
+//        $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$oppenid.'&lang=zh_CN';
+//        //发送网络请求
+//        $json_str = file_get_contents($url);
+//        $log_file = 'wx.user.log';
+//        file_put_contents($log_file,$json_str,FILE_APPEND);
+//    }
 
 
 
