@@ -65,18 +65,20 @@ class WxController extends Controller
             if($u){
                 $msg = '欢迎回来';
                 $xml = '<xml>
-  <ToUserName><![CDATA['.$openid.']]></ToUserName>
-  <FromUserName><![CDATA['.$xml_obj->ToUserName.']]></FromUserName>
-  <CreateTime>'.time().'</CreateTime>
-  <MsgType><![CDATA[text]]></MsgType>
-  <Content><![CDATA['.$msg.']]></Content>
-</xml>';
+                  <ToUserName><![CDATA['.$openid.']]></ToUserName>
+                  <FromUserName><![CDATA['.$xml_obj->ToUserName.']]></FromUserName>
+                  <CreateTime>'.time().'</CreateTime>
+                  <MsgType><![CDATA[text]]></MsgType>
+                  <Content><![CDATA['.$msg.']]></Content>
+                </xml>';
                 echo $xml;
             }else{
                 //获取用户信息 zcza
-                $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$this->access_token.'&openid='.$openid.'&lang=zh_CN';
+                $url ="https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$this->access_token.'&openid='.$openid.'&lang=zh_CN";
+
                 $user_info = file_get_contents($url);       //
                 $u = json_decode($user_info,true);
+
                 //echo '<pre>';print_r($u);echo '</pre>';die;
                 //入库用户信息
                 $user_data = [
@@ -86,17 +88,18 @@ class WxController extends Controller
                     'headimgurl'    => $u['headimgurl'],
                     'subscribe_time'    => $u['subscribe_time']
                 ];
+                dd($user_data);
                 //openid 入库
                 $uid = WeiXinModel::insertGetId($user_data);
                 $msg = "谢谢关注";
                 //回复用户关注
                 $xml = '<xml>
-  <ToUserName><![CDATA['.$openid.']]></ToUserName>
-  <FromUserName><![CDATA['.$xml_obj->ToUserName.']]></FromUserName>
-  <CreateTime>'.time().'</CreateTime>
-  <MsgType><![CDATA[text]]></MsgType>
-  <Content><![CDATA['.$msg.']]></Content>
-</xml>';
+                  <ToUserName><![CDATA['.$openid.']]></ToUserName>
+                  <FromUserName><![CDATA['.$xml_obj->ToUserName.']]></FromUserName>
+                  <CreateTime>'.time().'</CreateTime>
+                  <MsgType><![CDATA[text]]></MsgType>
+                  <Content><![CDATA['.$msg.']]></Content>
+                </xml>';
                 echo $xml;
             }
         }
@@ -117,29 +120,15 @@ class WxController extends Controller
             echo $response_text;            // 回复用户消息
         }
     }
-    /**
-     * 获取用户基本信息
-     */
-    public function getUserInfo($access_token,$openid)
-    {
-        $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
-        //发送网络请求
-        $json_str = file_get_contents($url);
-        $log_file = 'wx_user.log';
-        file_put_contents($log_file,$json_str,FILE_APPEND);
-    }
 
     /**
      *获取用户基本信息
      */
-//    public function getUserInfo($access_token,$oppenid){
-//        $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$oppenid.'&lang=zh_CN';
-//        //发送网络请求
-//        $json_str = file_get_contents($url);
-//        $log_file = 'wx.user.log';
-//        file_put_contents($log_file,$json_str,FILE_APPEND);
-//    }
-
-
-
+    public function getUserInfo($access_token,$oppenid){
+        $url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$oppenid.'&lang=zh_CN';
+        //发送网络请求
+        $json_str = file_get_contents($url);
+        $log_file = 'wx.user.log';
+        file_put_contents($log_file,$json_str,FILE_APPEND);
+    }
 }
