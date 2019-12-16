@@ -31,10 +31,13 @@ Route::any('user/baidu','User\\LoginController@baidu');
 //微信开发
 //Route::get('/wx','WeiXin\WxController@wx');
 //Route::post('/wx','WeiXin\WxController@receiv');
+
+
 //微信开发
 Route::get('/wx','WeiXin\WxController@wx');
-Route::post('/wx','WeiXin\WxController@receiv');
-//Route::post('/wx','Weixin\WxController@receiv');  //接受微信的推送事件
+Route::post('/wx','WeiXin\WxController@receiv');    //接受微信推送事件
+Route::get('/wx/media','WeiXin\WxController@getMedia'); //获取临时素材
+Route::get('/wx/test','WeiXin\WxController@test'); //获取临时素材
 
 
 
