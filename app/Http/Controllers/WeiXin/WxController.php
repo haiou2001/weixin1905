@@ -17,10 +17,10 @@ class WxController extends Controller
         $this->access_token = $this->GetAccessToken();
     }
 
-    public function test()
-    {
-        echo $this->access_token;
-    }
+//    public function test()
+//    {
+//        echo $this->access_token;
+//    }
 
     public function GetAccessToken()
     {
@@ -139,7 +139,12 @@ class WxController extends Controller
         <Content><![CDATA[' . $content . ']]></Content>
         </xml>';
         echo $response_text;            // 回复用户消息
+
+        //TODO 消息入库
     }
+//    elseif(){
+//
+//    }
 
     //获取素材
     public function getMedia()
