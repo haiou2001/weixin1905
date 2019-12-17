@@ -25,7 +25,7 @@ class WxController extends Controller
     public function GetAccessToken()
     {
         $key = 'wx_access_token';
-        //$access_token = Redis::get($key);
+ 
         if ($access_token){
             return $access_token;
         }
