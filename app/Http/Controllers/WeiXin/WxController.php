@@ -5,7 +5,7 @@ namespace App\Http\Controllers\WeiXin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\WeiXinModel;
-use Illuminate\Support\Facades\Redis;
+//use Illuminate\Support\Facades\Redis;
 
 class WxController extends Controller
 {
