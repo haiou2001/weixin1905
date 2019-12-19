@@ -11,13 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Route::get('/info', function () {
 	phpinfo();
 });
+
+Route::get('/','Index\IndexController@index');  //网址首页
+
 
 Route::get('/test/hello','Test\TestController@hello');
 
