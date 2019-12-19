@@ -259,7 +259,7 @@ class WxController extends Controller
         public function createMenu()
         {
             $urls ='http://wjk.xx20.top/vote';
-            $urls2 ='http://wjk.xx20.top';
+            $urls2 ='http://wjk.xx20.top/';
             $redirect_uri = urlencode($urls);        //授权后跳转页面
             $redirect_uri2 = urlencode($urls2);        //授权后跳转页面
             //创建自定义菜单的接口地址
