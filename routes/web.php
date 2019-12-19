@@ -26,7 +26,7 @@ Route::any('user/addUser','User\\LoginController@addUser');
 Route::any('user/redis1','User\\LoginController@redis1');
 Route::any('user/redis2','User\\LoginController@redis2');
 Route::any('user/baidu','User\\LoginController@baidu');
-
+Route::get('/dev/redis/del','VoteController@delKey');
 
 //微信开发
 //Route::get('/wx','WeiXin\WxController@wx');
