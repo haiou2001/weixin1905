@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Index;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Model\WxUserModel;
+use App\Model\WeiXinModel;
 
 class IndexController extends Controller
 {
@@ -16,14 +16,14 @@ class IndexController extends Controller
 
         // 判断用户是否已经存在
         $openid = $data['openid'];
-        $u = WxUserModel::where(['openid'=>$openid])->first();
+        $u = WeiXinModel::where(['openid'=>$openid])->first();
         if($u){  //用户已存在
             $user_info = $u->toArray();
         }else{
             //获取用户信息
             $user_info = $this->getUserInfo($data['access_token'],$data['openid']);
             // 入库
-            WxUserModel::insertGetId($user_info);
+            WeiXinModel::insertGetId($user_info);
         }
 
         $data = [
