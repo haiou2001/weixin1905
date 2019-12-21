@@ -3,7 +3,7 @@ namespace App\Http\Controllers\Goods;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Model\WeiXinModel;
+use App\Model\GoodsModel;
 
 class IndexController extends Controller
 {
