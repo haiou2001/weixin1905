@@ -370,6 +370,8 @@ Register
 				<h5>Fashion Men's</h5>
 				<div class="price">$20 <span>$28</span></div>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam eaque in non delectus, error iste veniam commodi mollitia, officia possimus, repellendus maiores doloribus provident. Itaque, ab perferendis nemo tempore! Accusamus</p>
+				商品描述:
+				{!!$goods->desc!!}
 				<button type="button" class="btn button-default">ADD TO CART</button>
 			</div>
 			<div class="review">

@@ -8,8 +8,15 @@ use App\Model\GoodsModel;
 class IndexController extends Controller
 {
     //商品详情
-    public function detail()
+    public function detail(Request $request)
     {
-        return view('goods.detail');
+        $goods_id = $request->input('id');
+        $goods = GoodsModel::find($goods_id);
+        // echo '<pre>';print_r($goods->toArray());echo '</pre>';
+        $data = [
+            'goods' => $goods
+        ];
+//        var_dump($data);die;
+        return view('goods.detail',$data);
     }
 }

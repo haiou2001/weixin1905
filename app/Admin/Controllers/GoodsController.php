@@ -30,6 +30,7 @@ class GoodsController extends AdminController
         $grid->column('goods_name', __('商品昵称'));
         $grid->column('img', __('商品图片'))->image();
         $grid->column('price', __('商品价格'));
+        $grid->column('desc', __('商品信息'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -68,7 +69,7 @@ class GoodsController extends AdminController
         $form->text('goods_name', __('商品名称'));
         $form->image('img', __('商品图片'));
         $form->number('price', __('商品价格'));
-
+        $form->ckeditor('desc',__('商品信息'));
         return $form;
     }
 }
