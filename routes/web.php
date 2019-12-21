@@ -49,4 +49,5 @@ Route::get('/wx/flush/access_token','WeiXin\WxController@flushAccessToken');    
 Route::get('/wx/menu','WeiXin\WxController@createMenu');        //创建菜单
 //微信公众号
 Route::get('/vote','VoteController@index');        //微信投票
+Route::get('/goods/detail','Goods\IndexController@detail');        //详情
 

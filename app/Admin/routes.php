@@ -12,4 +12,6 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('admin.home');
     $router->resource('users', WxController::class);
+    $router->resource('goods', GoodsController::class);  //商品管理
+
 });
