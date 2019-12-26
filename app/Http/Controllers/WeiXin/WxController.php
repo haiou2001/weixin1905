@@ -267,17 +267,22 @@ class WxController extends Controller
         public function createMenu()
         {
             $urls ='http://wjk.xx20.top/course/index';
-            $urls2 ='http://wjk.xx20.top/';
+            $urls2 ='http://wjk.xx20.top/course/add';
             $redirect_uri = urlencode($urls);        //授权后跳转页面
             $redirect_uri2 = urlencode($urls2);        //授权后跳转页面
             //创建自定义菜单的接口地址
             $url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token='.$this->access_token;
             $menu = [
                 'button'    => [
+//                    [
+//                        'type'  => 'click',
+//                        'name'  => '查看课程',
+//                        'key'   => 'weather'
+//                    ],
                     [
-                        'type'  => 'click',
+                        'type'  => 'view',
                         'name'  => '查看课程',
-                        'key'   => 'weather'
+                        'url'   => 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbb1432093d0e71c4&redirect_uri='.$redirect_uri2.'&response_type=code&scope=snsapi_userinfo&state=ABCD1905#wechat_redirect'
                     ],
                     [
                         'type'  => 'view',

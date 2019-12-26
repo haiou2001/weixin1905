@@ -54,4 +54,5 @@ Route::get('/wx/qrcode','WeiXin\WxQRController@qrcode');
 
 //课程
 Route::get('/course/index','Course\CourseController@index');
+Route::get('/course/add','Course\CourseController@add');
 

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>管理课程</title>
+    <title>查看课程</title>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -54,7 +54,6 @@
             </select>
         </div>
     </div>
-    <center><button type="submit"  class="btn btn-default">提交</button></center>
 </form>
 </body>
 </html>
