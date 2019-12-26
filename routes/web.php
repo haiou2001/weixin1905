@@ -55,4 +55,8 @@ Route::get('/wx/qrcode','WeiXin\WxQRController@qrcode');
 //课程
 Route::get('/course/index','Course\CourseController@index');
 Route::get('/course/add','Course\CourseController@add');
+Route::post('/course/store','Course\CourseController@store');
+Route::get('/course/list','Course\CourseController@list');
+Route::post('/course/update','Course\CourseController@update');
+Route::get('/course/edit/{id}','Course\CourseController@edit');
 
