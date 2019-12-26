@@ -52,3 +52,6 @@ Route::get('/vote','VoteController@index');        //微信投票
 Route::get('/goods/detail','Goods\IndexController@detail');        //详情
 Route::get('/wx/qrcode','WeiXin\WxQRController@qrcode');
 
+//课程
+Route::get('/course/index','Course\CourseController@index');
+

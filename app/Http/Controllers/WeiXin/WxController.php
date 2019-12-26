@@ -102,10 +102,10 @@ class WxController extends Controller
                     //openid 入库
                     $uid = WeiXinModel::insertGetId($user_data);
                     $msg = "谢谢关注
-                    第一节课:PHP 
-                    第二节课:语文 
-                    第三节课:数学 
-                    第四节课:英语";
+    第一节课:PHP 
+    第二节课:语文 
+    第三节课:数学 
+    第四节课:英语";
                     //回复用户关注
                     $xml = '<xml>
   <ToUserName><![CDATA['.$openid.']]></ToUserName>
