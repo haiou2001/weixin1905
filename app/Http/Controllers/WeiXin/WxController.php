@@ -123,22 +123,22 @@ class WxController extends Controller
                             if($ke){
                                 $b='第一节课'.$ke['ka']."\n".'第二节课'.$ke['kb']."\n".'第三节课'.$ke['kc']."\n".'第四节课'.$ke['kd'];
                                 $a='<xml>
-<ToUserName><![CDATA['.$openid.']]></ToUserName>
-<FromUserName><![CDATA['.$touser.']]></FromUserName>
-<CreateTime>'.$time.'</CreateTime>
-<MsgType><![CDATA[text]]></MsgType>
-<Content><![CDATA['.$b.']]></Content>
-</xml>';
+                                    <ToUserName><![CDATA['.$openid.']]></ToUserName>
+                                    <FromUserName><![CDATA['.$xml_obj->ToUserName.']]></FromUserName>
+                                    <CreateTime>'.$time().'</CreateTime>
+                                    <MsgType><![CDATA[text]]></MsgType>
+                                    <Content><![CDATA['.$b.']]></Content>
+                                    </xml>';
                                 echo $a;
                             }else{
                                 $b='您还没添加课程，请赶快去课程管理添加把';
                                 $a='<xml>
-<ToUserName><![CDATA['.$openid.']]></ToUserName>
-<FromUserName><![CDATA['.$touser.']]></FromUserName>
-<CreateTime>'.$time.'</CreateTime>
-<MsgType><![CDATA[text]]></MsgType>
-<Content><![CDATA['.$b.']]></Content>
-</xml>';
+                                        <ToUserName><![CDATA['.$openid.']]></ToUserName>
+                                        <FromUserName><![CDATA['.$touser.']]></FromUserName>
+                                        <CreateTime>'.$time().'</CreateTime>
+                                        <MsgType><![CDATA[text]]></MsgType>
+                                        <Content><![CDATA['.$b.']]></Content>
+                                        </xml>';
                                 echo $a;
                             }
 
