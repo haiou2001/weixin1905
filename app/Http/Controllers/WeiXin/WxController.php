@@ -118,7 +118,6 @@ class WxController extends Controller
                 }
             }elseif($event=='CLICK'){           // 菜单点击事件
                 if($xml_obj->EventKey=='weather'){
-                    if ($xml_obj->Event=='CLICK') {
 //判断并且触发
                             $ke=Ke::where('openid','=',$openid)->first();
                             if($ke){
@@ -143,7 +142,7 @@ class WxController extends Controller
                                 echo $a;
                             }
 
-                    }
+
 
                 }
             }
