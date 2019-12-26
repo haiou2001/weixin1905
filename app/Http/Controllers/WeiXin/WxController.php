@@ -268,19 +268,30 @@ class WxController extends Controller
                 'button'    => [
                     [
                         'type'  => 'click',
-                        'name'  => '获取天气',
+                        'name'  => '查看课程',
                         'key'   => 'weather'
                     ],
                     [
                         'type'  => 'view',
-                        'name'  => '投票',
+                        'name'  => '管理课程',
                         'url'   => 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbb1432093d0e71c4&redirect_uri='.$redirect_uri.'&response_type=code&scope=snsapi_userinfo&state=ABCD1905#wechat_redirect'
                     ],
-                    [
-                        'type'  => 'view',
-                        'name'  => '商城',
-                        'url'   => 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbb1432093d0e71c4&redirect_uri='.$redirect_uri2.'&response_type=code&scope=snsapi_userinfo&state=ABCD1905#wechat_redirect'
-                    ],
+//                    ['name'=> '菜单',
+//                    'sub_button'=>
+//                        [
+//                                [
+//                                    'type'  => 'view',
+//                                    'name'  => '商城',
+//                                    'url'   => 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbb1432093d0e71c4&redirect_uri='.$redirect_uri2.'&response_type=code&scope=snsapi_userinfo&state=ABCD1905#wechat_redirect'
+//                                ],
+//                            [
+//                                'type'  => 'view',
+//                                'name'  => '超市',
+//                                'url'   => 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbb1432093d0e71c4&redirect_uri='.$redirect_uri2.'&response_type=code&scope=snsapi_userinfo&state=ABCD1905#wechat_redirect'
+//                            ],
+//                        ],
+//
+//                    ]
                 ]
             ];
             $menu_json = json_encode($menu,JSON_UNESCAPED_UNICODE);
