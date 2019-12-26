@@ -106,7 +106,7 @@ class WxController extends Controller
     第二节课:语文 
     第三节课:数学 
     第四节课:英语";
-                    //回复用户关注
+                    //回复用户关注dsad 
                     $xml = '<xml>
   <ToUserName><![CDATA['.$openid.']]></ToUserName>
   <FromUserName><![CDATA['.$xml_obj->ToUserName.']]></FromUserName>
