@@ -262,7 +262,7 @@ class WxController extends Controller
             echo $this->getAccessToken();
         }
         /**
-         * 创建自定义菜单
+         * 创建自定义菜单qq
          */
         public function createMenu()
         {
