@@ -126,11 +126,7 @@ class WxController extends Controller
                     $cond_txt = $weather_info_arr['HeWeather6'][0]['now']['cond_txt'];
                     $tmp = $weather_info_arr['HeWeather6'][0]['now']['tmp'];
                     $wind_dir = $weather_info_arr['HeWeather6'][0]['now']['wind_dir'];
-
-                    $msg = $cond_txt .'第一节课:PHP
-    第二节课:语文
-    第三节课:数学
-    第四节课:英语'.;
+                    $msg = $cond_txt . ' 温度： '.$tmp . ' 风向： '. $wind_dir;
                     $response_xml = '<xml>
   <ToUserName><![CDATA['.$openid.']]></ToUserName>
   <FromUserName><![CDATA['.$xml_obj->ToUserName.']]></FromUserName>
