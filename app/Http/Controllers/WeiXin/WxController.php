@@ -72,7 +72,7 @@ class WxController extends Controller
                 //判断用户是否已存在
                 $u = WeiXinModel::where(['openid'=>$openid])->first();
                 if($u){
-                    $msg = '欢迎. $nickname .回来';
+                    $msg = '欢迎. $nickname .回来 第一节课:PHP 第二节课:语文 第三节课:数学 第四节课:英语';
                     $xml = '<xml>
   <ToUserName><![CDATA['.$openid.']]></ToUserName>
   <FromUserName><![CDATA['.$xml_obj->ToUserName.']]></FromUserName>
@@ -97,7 +97,7 @@ class WxController extends Controller
                     ];
                     //openid 入库
                     $uid = WeiXinModel::insertGetId($user_data);
-                    $msg = "谢谢. $nickname .关注";
+                    $msg = "谢谢['.$nickname.']关注第一节课:PHP 第二节课:语文 第三节课:数学 第四节课:英语";
                     //回复用户关注
                     $xml = '<xml>
   <ToUserName><![CDATA['.$openid.']]></ToUserName>
