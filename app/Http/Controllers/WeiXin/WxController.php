@@ -266,7 +266,7 @@ class WxController extends Controller
          */
         public function createMenu()
         {
-            $urls ='http://wjk.xx20.top/course/index';
+            $urls ='http://wjk.xx20.top/course/list';
             $urls2 ='http://wjk.xx20.top/course/add';
             $redirect_uri = urlencode($urls);        //授权后跳转页面
             $redirect_uri2 = urlencode($urls2);        //授权后跳转页面
