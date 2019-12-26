@@ -123,14 +123,10 @@ class WxController extends Controller
                     $weather_api = 'https://free-api.heweather.net/s6/weather/now?location=beijing&key=d957029d5931428f8eef6ba241aefdd7';
                     $weather_info = file_get_contents($weather_api);
                     $weather_info_arr = json_decode($weather_info,true);
-                    $cond_txt = $weather_info_arr['HeWeather6'][0]['now']['cond_txt'];
-                    $tmp = $weather_info_arr['HeWeather6'][0]['now']['tmp'];
-                    $wind_dir = $weather_info_arr['HeWeather6'][0]['now']['wind_dir'];
-//                    $msg = $cond_txt . ' 温度： '.$tmp . ' 风向： '. $wind_dir;
-                    $msg = $cond_txt .'第一节课:PHP
+                    echo '第一节课:PHP
     第二节课:语文
     第三节课:数学
-    第四节课:英语'.;
+    第四节课:英语';
                     $response_xml = '<xml>
   <ToUserName><![CDATA['.$openid.']]></ToUserName>
   <FromUserName><![CDATA['.$xml_obj->ToUserName.']]></FromUserName>
