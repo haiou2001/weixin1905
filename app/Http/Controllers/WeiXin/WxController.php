@@ -72,7 +72,7 @@ class WxController extends Controller
                 //判断用户是否已存在
                 $u = WeiXinModel::where(['openid'=>$openid])->first();
                 if($u){
-                    $msg = '欢迎回来 
+                    $msg = '欢迎 海鸥 回来 
     第一节课:PHP 
     第二节课:语文 
     第三节课:数学 
@@ -101,7 +101,7 @@ class WxController extends Controller
                     ];
                     //openid 入库
                     $uid = WeiXinModel::insertGetId($user_data);
-                    $msg = "谢谢关注
+                    $msg = "谢谢 海鸥 关注
     第一节课:PHP 
     第二节课:语文 
     第三节课:数学 
@@ -276,7 +276,7 @@ class WxController extends Controller
                 'button'    => [
 //                    [
 //                        'type'  => 'click',
-//                        'name'  => '查看课程',
+//                        'name'  => '天气',
 //                        'key'   => 'weather'
 //                    ],
                     [
